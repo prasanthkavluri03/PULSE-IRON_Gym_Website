@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PULSE & IRON | Premier Athletic Club & Strength Center</title>
+  <meta name="description" content="Pulse & Iron Athletic Club - High performance strength training, tactical HIIT, personal coaching, and recovery. Claim your free 1-day pass today!">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. DUMBBELL LIFTING PRELOADER
+       ========================================================================== -->
+  <div id="preloader">
+    <div class="loader-container">
+      <!-- Custom Animated Dumbbell SVG -->
+      <svg class="dumbbell-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Dumbbell Bar -->
+        <rect x="15" y="46" width="70" height="8" rx="4" fill="#ffffff" />
+        <!-- Knurling Grip lines -->
+        <line x1="42" y1="46" x2="42" y2="54" stroke="#000000" stroke-width="1.5"/>
+        <line x1="50" y1="46" x2="50" y2="54" stroke="#000000" stroke-width="1.5"/>
+        <line x1="58" y1="46" x2="58" y2="54" stroke="#000000" stroke-width="1.5"/>
+        <!-- Left Weight Plates -->
+        <rect class="plate-left" x="22" y="24" width="10" height="52" rx="4" fill="#d4d4d8" stroke="#ffffff" stroke-width="2"/>
+        <rect class="plate-left" x="14" y="30" width="7" height="40" rx="3" fill="#71717a" stroke="#ffffff" stroke-width="1.5"/>
+        <rect class="plate-left" x="8" y="36" width="5" height="28" rx="2" fill="#3f3f46"/>
+        <!-- Right Weight Plates -->
+        <rect class="plate-right" x="68" y="24" width="10" height="52" rx="4" fill="#d4d4d8" stroke="#ffffff" stroke-width="2"/>
+        <rect class="plate-right" x="79" y="30" width="7" height="40" rx="3" fill="#71717a" stroke="#ffffff" stroke-width="1.5"/>
+        <rect class="plate-right" x="87" y="36" width="5" height="28" rx="2" fill="#3f3f46"/>
+      </svg>
+      <div class="loader-brand">PULSE & IRON</div>
+      <div class="loader-bar-bg">
+        <div class="loader-bar-fill" id="loaderFill"></div>
+      </div>
+      <div class="loader-text" id="loaderPercent">0%</div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       2. HEADER & NAVIGATION
+       ========================================================================== -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="nav-brand">
+        <div class="brand-icon">PI</div>
+        <div class="brand-name">PULSE <span>& IRON</span></div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#programs" class="nav-link">Programs</a></li>
+        <li><a href="#schedule" class="nav-link">Schedule</a></li>
+        <li><a href="#calculator" class="nav-link">Fitness Calc</a></li>
+        <li><a href="#pricing" class="nav-link">Membership</a></li>
+        <li><a href="#trainers" class="nav-link">Coaches</a></li>
+        <li><a href="#pitch" class="nav-link" style="color: #ffffff; font-weight: 700;">Owner Pitch</a></li>
+      </ul>
+
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <div class="status-badge">
+          <div class="status-dot open" id="statusDot"></div>
+          <span id="statusText">OPEN NOW &bull; 6 AM - 10 PM</span>
+        </div>
+        <a href="#" class="btn btn-primary trigger-pass-modal">Free Pass</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">&#9776;</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay">
+    <button class="mobile-close-btn" id="mobileCloseBtn">&times;</button>
+    <ul style="list-style:none; text-align:center; display:flex; flex-direction:column; gap:2rem;">
+      <li><a href="#about" class="nav-link" onclick="document.getElementById('mobileNavOverlay').classList.remove('open')">About</a></li>
+      <li><a href="#programs" class="nav-link" onclick="document.getElementById('mobileNavOverlay').classList.remove('open')">Programs</a></li>
+      <li><a href="#schedule" class="nav-link" onclick="document.getElementById('mobileNavOverlay').classList.remove('open')">Schedule</a></li>
+      <li><a href="#calculator" class="nav-link" onclick="document.getElementById('mobileNavOverlay').classList.remove('open')">Fitness Calc</a></li>
+      <li><a href="#pricing" class="nav-link" onclick="document.getElementById('mobileNavOverlay').classList.remove('open')">Membership</a></li>
+      <li><a href="#trainers" class="nav-link" onclick="document.getElementById('mobileNavOverlay').classList.remove('open')">Coaches</a></li>
+      <li><a href="#contact" class="btn btn-primary trigger-pass-modal" onclick="document.getElementById('mobileNavOverlay').classList.remove('open')">Free Pass</a></li>
+    </ul>
+  </div>
+
+  <!-- ==========================================================================
+       3. HERO SECTION
+       ========================================================================== -->
+  <section class="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="section-tag">High Performance Athletic Club</div>
+        <h1 class="hero-title">
+          FORGE YOUR <br>
+          <span class="outline-text">UNFAIR ADVANTAGE.</span>
+        </h1>
+        <p class="hero-desc">
+          State-of-the-art iron, biomechanically superior equipment, tactical HIIT, and elite personal coaching designed for serious results.
+        </p>
+        <div class="hero-btns">
+          <a href="#" class="btn btn-primary trigger-pass-modal">CLAIM 1-DAY PASS</a>
+          <a href="#pitch" class="btn btn-pitch trigger-pitch-modal">💼 View Owner Pitch Deck</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">1,400+</div>
+            <div class="stat-label">Active Members</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">18+</div>
+            <div class="stat-label">Certified Coaches</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">99.2%</div>
+            <div class="stat-label">Goal Satisfaction</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card-preview">
+        <div class="hero-card-header">
+          <div class="hero-card-title">MEMBERSHIP PRIVILEGES</div>
+          <div class="section-tag" style="margin: 0;">24/7 ACCESS</div>
+        </div>
+        <ul class="hero-feature-list">
+          <li class="hero-feature-item">
+            <span class="check-icon">✓</span>
+            Hammer Strength & Rogue Competition Racks
+          </li>
+          <li class="hero-feature-item">
+            <span class="check-icon">✓</span>
+            Infrared Sauna & Contrast Ice Bath Recovery
+          </li>
+          <li class="hero-feature-item">
+            <span class="check-icon">✓</span>
+            Unlimited Daily Group Conditioning Classes
+          </li>
+          <li class="hero-feature-item">
+            <span class="check-icon">✓</span>
+            Monthly InBody 770 Composition Scan
+          </li>
+          <li class="hero-feature-item">
+            <span class="check-icon">✓</span>
+            No Lock-in Contracts & Guest Privileges
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. INFINITE MARQUEE TICKER
+       ========================================================================== -->
+  <div class="marquee-container">
+    <div class="marquee-content">
+      <span class="marquee-item">STRENGTH <span class="marquee-dot"></span></span>
+      <span class="marquee-item">ENDURANCE <span class="marquee-dot"></span></span>
+      <span class="marquee-item">RECOVERY <span class="marquee-dot"></span></span>
+      <span class="marquee-item">NO EXCUSES <span class="marquee-dot"></span></span>
+      <span class="marquee-item">HYPERTROPHY <span class="marquee-dot"></span></span>
+      <span class="marquee-item">ATHLETIC PERFORMANCE <span class="marquee-dot"></span></span>
+      <span class="marquee-item">PURE GRIT <span class="marquee-dot"></span></span>
+      <span class="marquee-item">STRENGTH <span class="marquee-dot"></span></span>
+      <span class="marquee-item">ENDURANCE <span class="marquee-dot"></span></span>
+      <span class="marquee-item">RECOVERY <span class="marquee-dot"></span></span>
+      <span class="marquee-item">NO EXCUSES <span class="marquee-dot"></span></span>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       5. ABOUT SECTION
+       ========================================================================== -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-image-wrapper">
+        <img src="assets/strength.png" alt="Pulse & Iron Gym Floor" class="about-img">
+        <div class="about-badge-floating">
+          <div class="about-badge-num">12,000 SQ FT</div>
+          <div class="about-badge-lbl">PRO IRON FACILITY</div>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <div class="section-tag">Built For Performers</div>
+        <h3>WE ARE NOT A COMMERCIAL HEALTH CLUB. WE ARE A TRAINING GROUND.</h3>
+        <p>
+          Founded in 2021, Pulse & Iron Athletic Club was built to bridge the gap between intimidating hardcore iron gyms and soft corporate fitness centers.
+        </p>
+        <p>
+          We house top-tier competition barbells, heavy dumbbells up to 150 lbs, custom turf sprint tracks, and an elite coaching staff dedicated to your physical evolution.
+        </p>
+
+        <div class="about-values-list">
+          <div class="value-card">
+            <h4>CALIBER EQUIPMENT</h4>
+            <p>Rogue, Eleiko, & Hammer Strength platforms engineered for optimal biomechanics.</p>
+          </div>
+          <div class="value-card">
+            <h4>ELITE COMMUNITY</h4>
+            <p>Train alongside dedicated athletes, professionals, and fitness enthusiasts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. PROGRAMS & SERVICES
+       ========================================================================== -->
+  <section id="programs">
+    <div class="section-header">
+      <div class="section-tag">Training Discipline</div>
+      <h2 class="section-title">OUR CORE PROGRAMS</h2>
+      <p class="section-subtitle">Structured strength, power, and conditioning routines customized to elevate your physical capacity.</p>
+    </div>
+
+    <div class="programs-grid">
+      <div class="program-card">
+        <div class="program-icon">🏋️‍♂️</div>
+        <h3 class="program-title">HEAVY IRON & POWER</h3>
+        <p class="program-desc">Barbell fundamentals, progressive overload programming, and strength hypertrophy blocks guided by certified coaches.</p>
+        <a href="#" class="btn btn-outline trigger-pass-modal" style="width: 100%;">Learn More</a>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon">⚡</div>
+        <h3 class="program-title">TACTICAL HIIT & TURF</h3>
+        <p class="program-desc">High-intensity interval training combining kettlebells, rowers, sled pushes, and plyometrics for rapid calorie incineration.</p>
+        <a href="#" class="btn btn-outline trigger-pass-modal" style="width: 100%;">Learn More</a>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon">🎯</div>
+        <h3 class="program-title">1-ON-1 COACHING</h3>
+        <p class="program-desc">Bespoke 1-on-1 personal training including custom macro nutrition planning and weekly accountability assessments.</p>
+        <a href="#" class="btn btn-outline trigger-pass-modal" style="width: 100%;">Learn More</a>
+      </div>
+
+      <div class="program-card">
+        <div class="program-icon">🧊</div>
+        <h3 class="program-title">RECOVERY & SAUNA</h3>
+        <p class="program-desc">Finnish dry heat saunas and ice plunges designed to diminish DOMS, lower inflammation, and accelerate muscle repair.</p>
+        <a href="#" class="btn btn-outline trigger-pass-modal" style="width: 100%;">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. INTERACTIVE CLASS SCHEDULE
+       ========================================================================== -->
+  <section id="schedule">
+    <div class="section-header">
+      <div class="section-tag">Timetable</div>
+      <h2 class="section-title">WEEKLY CLASS TIMETABLE</h2>
+      <p class="section-subtitle">Select a day to filter live group sessions and book your spot.</p>
+    </div>
+
+    <div class="schedule-filter">
+      <button class="day-btn active" data-day="all">ALL DAYS</button>
+      <button class="day-btn" data-day="mon">MON</button>
+      <button class="day-btn" data-day="tue">TUE</button>
+      <button class="day-btn" data-day="wed">WED</button>
+      <button class="day-btn" data-day="thu">THU</button>
+      <button class="day-btn" data-day="fri">FRI</button>
+      <button class="day-btn" data-day="sat">SAT</button>
+    </div>
+
+    <div class="timetable-grid">
+      <div class="schedule-card" data-days="mon wed fri">
+        <div>
+          <div class="schedule-time">06:30 AM - 07:30 AM</div>
+          <div class="schedule-name">Dawn Shred HIIT</div>
+          <div class="schedule-coach">Coach Sarah Jenkins</div>
+        </div>
+        <span class="schedule-tag">HIIT & CARDIO</span>
+      </div>
+
+      <div class="schedule-card" data-days="mon tue thu">
+        <div>
+          <div class="schedule-time">08:00 AM - 09:15 AM</div>
+          <div class="schedule-name">Heavy Barbell Power</div>
+          <div class="schedule-coach">Coach Alex Vance</div>
+        </div>
+        <span class="schedule-tag">STRENGTH</span>
+      </div>
+
+      <div class="schedule-card" data-days="tue thu sat">
+        <div>
+          <div class="schedule-time">12:00 PM - 01:00 PM</div>
+          <div class="schedule-name">Turf Sled & Conditioning</div>
+          <div class="schedule-coach">Coach Marcus Cole</div>
+        </div>
+        <span class="schedule-tag">ENDURANCE</span>
+      </div>
+
+      <div class="schedule-card" data-days="mon wed fri sat">
+        <div>
+          <div class="schedule-time">05:30 PM - 06:30 PM</div>
+          <div class="schedule-name">Hypertrophy Chest & Arms</div>
+          <div class="schedule-coach">Coach Alex Vance</div>
+        </div>
+        <span class="schedule-tag">BODYBUILDING</span>
+      </div>
+
+      <div class="schedule-card" data-days="tue thu fri">
+        <div>
+          <div class="schedule-time">07:00 PM - 08:00 PM</div>
+          <div class="schedule-name">Mobility & Sauna Release</div>
+          <div class="schedule-coach">Coach Sarah Jenkins</div>
+        </div>
+        <span class="schedule-tag">RECOVERY</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. INTERACTIVE FITNESS CALCULATOR
+       ========================================================================== -->
+  <section id="calculator">
+    <div class="section-header">
+      <div class="section-tag">Interactive Tool</div>
+      <h2 class="section-title">BMI & NUTRITION CALCULATOR</h2>
+      <p class="section-subtitle">Compute your Body Mass Index and estimated daily energy expenditure to align your goals.</p>
+    </div>
+
+    <div class="calc-container">
+      <form class="calc-form" id="bmiForm" onsubmit="return false;">
+        <div class="form-group">
+          <label for="calcHeight">Height (cm)</label>
+          <input type="number" id="calcHeight" class="form-control" value="178" min="100" max="230">
+        </div>
+
+        <div class="form-group">
+          <label for="calcWeight">Weight (kg)</label>
+          <input type="number" id="calcWeight" class="form-control" value="78" min="40" max="200">
+        </div>
+
+        <div class="form-group">
+          <label for="calcAge">Age (Years)</label>
+          <input type="number" id="calcAge" class="form-control" value="26" min="15" max="80">
+        </div>
+
+        <div class="form-group">
+          <label for="calcActivity">Daily Activity Level</label>
+          <select id="calcActivity" class="form-control">
+            <option value="1.2">Light / Sedentary (1-2 days/wk)</option>
+            <option value="1.375" selected>Moderate Lifting (3-4 days/wk)</option>
+            <option value="1.55">Heavy Training (5-6 days/wk)</option>
+            <option value="1.725">Athlete / Double Sessions</option>
+          </select>
+        </div>
+      </form>
+
+      <div class="calc-result-box">
+        <div class="section-tag" style="margin-bottom: 0.5rem;">YOUR METRIC SCORE</div>
+        <div class="calc-score" id="bmiValue">24.6</div>
+        <div class="calc-category" id="bmiCategory">Optimal Fitness</div>
+
+        <div class="calc-details">
+          <div class="calc-detail-item">
+            <div class="calc-detail-val" id="calcCalories">2,450 kcal</div>
+            <div class="calc-detail-lbl">Daily Maintenance TDEE</div>
+          </div>
+          <div class="calc-detail-item">
+            <div class="calc-detail-val" id="calcProtein">156 g</div>
+            <div class="calc-detail-lbl">Recommended Protein Target</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       9. MEMBERSHIP & PRICING
+       ========================================================================== -->
+  <section id="pricing">
+    <div class="section-header">
+      <div class="section-tag">Transparent Pricing</div>
+      <h2 class="section-title">SELECT YOUR MEMBERSHIP</h2>
+      <p class="section-subtitle">No long term locks. Upgrade or pause anytime with 30 days notice.</p>
+    </div>
+
+    <div class="pricing-toggle-wrap">
+      <span class="toggle-label active" id="lblMonthly">Monthly Billing</span>
+      <label class="switch" style="position: relative; display: inline-block; width: 50px; height: 26px;">
+        <input type="checkbox" id="pricingSwitch" style="opacity: 0; width: 0; height: 0;">
+        <span style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #27272a; transition: .4s; border-radius: 34px; border: 1px solid #52525b;"></span>
+      </label>
+      <span class="toggle-label" id="lblAnnual">Annual Contract <span class="discount-tag">Save 20%</span></span>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Basic Iron -->
+      <div class="pricing-card">
+        <h3 class="pricing-tier">BASIC IRON</h3>
+        <p class="pricing-desc">Essential access for independent lifters.</p>
+        <div class="pricing-price" id="priceBasic">$49 <span>/ month</span></div>
+        <ul class="pricing-features">
+          <li class="pricing-feature-item"><span class="check-icon">✓</span> Full Gym & Turf Access (6AM - 10PM)</li>
+          <li class="pricing-feature-item"><span class="check-icon">✓</span> Free Locker & Shower Amenities</li>
+          <li class="pricing-feature-item"><span class="check-icon">✓</span> InBody Composition Scan (1/mo)</li>
+        </ul>
+        <a href="#" class="btn btn-outline trigger-pass-modal">Get Started</a>
+      </div>
+
+      <!-- Performance Pro (Featured) -->
+      <div class="pricing-card featured">
+        <div class="badge-featured">MOST POPULAR</div>
+        <h3 class="pricing-tier">PERFORMANCE PRO</h3>
+        <p class="pricing-desc">Complete athlete package with unlimited classes.</p>
+        <div class="pricing-price" id="pricePro">$89 <span>/ month</span></div>
+        <ul class="pricing-features">
+          <li class="pricing-feature-item"><span class="check-icon">✓</span> 24/7 Keycard Gym Access</li>
+          <li class="pricing-feature-item"><span class="check-icon">✓</span> Unlimited HIIT & Group Classes</li>
+          <li class="pricing-feature-item"><span class="check-icon">✓</span> Infrared Sauna & Cryo Recovery Pass</li>
+          <li class="pricing-feature-item"><span class="check-icon">✓</span> 2 Guest Passes per Month</li>
+        </ul>
+        <a href="#" class="btn btn-primary trigger-pass-modal">Get Started</a>
+      </div>
+
+      <!-- Elite Athletic -->
+      <div class="pricing-card">
+        <h3 class="pricing-tier">ELITE ATHLETIC</h3>
+        <p class="pricing-desc">For dedicated athletes requiring 1-on-1 coaching.</p>
+        <div class="pricing-price" id="priceElite">$149 <span>/ month</span></div>
+        <ul class="pricing-features">
+          <li class="pricing-feature-item"><span class="check-icon">✓</span> Everything in Performance Pro</li>
+          <li class="pricing-feature-item"><span class="check-icon">✓</span> 2x Personal Coaching Sessions / mo</li>
+          <li class="pricing-feature-item"><span class="check-icon">✓</span> Custom Macro Nutrition Plan</li>
+          <li class="pricing-feature-item"><span class="check-icon">✓</span> Priority Class Booking</li>
+        </ul>
+        <a href="#" class="btn btn-outline trigger-pass-modal">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       10. TESTIMONIALS & SUCCESS STORIES
+       ========================================================================== -->
+  <section id="testimonials" style="background: transparent;">
+    <div class="section-header">
+      <div class="section-tag">Real Members</div>
+      <h2 class="section-title">SUCCESS STORIES</h2>
+      <p class="section-subtitle">Results from members who committed to the process and showed up every week.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
+        <div class="testimonial-quote">&ldquo;</div>
+        <p class="testimonial-text">Joined Pulse & Iron when I was 98 kg and couldn't bench 60 kg. 8 months later, I'm at 82 kg and hitting a 120 kg bench. The coaches here are elite level — they actually care about your progress.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">RK</div>
+          <div>
+            <div class="testimonial-name">Rahul Kapoor</div>
+            <div class="testimonial-result">Lost 16 kg &bull; Strength doubled in 8 months</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
+        <div class="testimonial-quote">&ldquo;</div>
+        <p class="testimonial-text">As someone who had a bad experience with commercial gyms, Pulse & Iron changed everything. The equipment is immaculate, never a long wait, and the HIIT classes are absolutely brutal in the best way possible.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SN</div>
+          <div>
+            <div class="testimonial-name">Sneha Nair</div>
+            <div class="testimonial-result">12% body fat reduction &bull; Member since 2023</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
+        <div class="testimonial-quote">&ldquo;</div>
+        <p class="testimonial-text">The infrared sauna & ice plunge combo after leg day is a complete game changer. I used to dread DOMS for 4 days — now I recover in 48 hours flat. Worth every rupee of the Elite membership.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AM</div>
+          <div>
+            <div class="testimonial-name">Arjun Mehta</div>
+            <div class="testimonial-result">Elite Athletic Member &bull; 2 Years Running</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       11. TRAINER SPOTLIGHT
+       ========================================================================== -->
+  <section id="trainers">
+    <div class="section-header">
+      <div class="section-tag">Expert Leadership</div>
+      <h2 class="section-title">MEET OUR HEAD COACHES</h2>
+      <p class="section-subtitle">Certified strength coaches with proven competitive track records.</p>
+    </div>
+
+    <div class="trainers-grid">
+      <div class="trainer-card">
+        <div class="trainer-img-wrap">
+          <img src="assets/trainer.png" alt="Coach Alex Vance" class="trainer-img">
+        </div>
+        <div class="trainer-info">
+          <h3 class="trainer-name">ALEX VANCE</h3>
+          <div class="trainer-role">Head Strength & Conditioning</div>
+          <div class="trainer-tags">
+            <span class="trainer-tag">CSCS</span>
+            <span class="trainer-tag">Powerlifting</span>
+            <span class="trainer-tag">10+ Yrs Exp</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trainer-card">
+        <div class="trainer-img-wrap">
+          <img src="istockphoto-547430870-612x612.jpg" alt="Coach Marcus Cole" class="trainer-img">
+        </div>
+        <div class="trainer-info">
+          <h3 class="trainer-name">MARCUS COLE</h3>
+          <div class="trainer-role">Bodybuilding & Hypertrophy</div>
+          <div class="trainer-tags">
+            <span class="trainer-tag">IFBB Pro</span>
+            <span class="trainer-tag">Rehab & Posture</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="trainer-card">
+        <div class="trainer-img-wrap">
+          <img src="fitness-coach-guiding-client-through-strength-training-session-welllit-gym_1316642-11473.avif" alt="Coach Sarah Jenkins" class="trainer-img">
+        </div>
+        <div class="trainer-info">
+          <h3 class="trainer-name">SARAH JENKINS</h3>
+          <div class="trainer-role">Tactical HIIT & Recovery</div>
+          <div class="trainer-tags">
+            <span class="trainer-tag">CrossFit L2</span>
+            <span class="trainer-tag">Nutritionist</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       11. CLIENT PITCH DECK SECTION (FOR GYM OWNER & DEVELOPER LEARN)
+       ========================================================================== -->
+  <div style="max-width: 1280px; margin: 0 auto; padding: 0 2rem;" id="pitch">
+    <div class="pitch-banner">
+      <div>
+        <div class="section-tag" style="background: rgba(255, 255, 255, 0.1);">BUSINESS PITCH DEMO FOR GYM OWNER</div>
+        <h3 class="pitch-banner-title">HOW THIS WEBSITE CREATES A 3X MEMBERSHIP PIPELINE</h3>
+        <p class="pitch-banner-desc">
+          Most local gyms rely purely on Instagram or word-of-mouth. This website acts as a 24/7 lead conversion machine that turns casual visitors into paying members.
+        </p>
+
+        <button class="btn btn-primary trigger-pitch-modal" style="background: #ffffff; color: #000;">
+          📊 Explore Full Client Proposal & Pricing Deck
+        </button>
+
+        <div class="pitch-features-mini">
+          <div class="pitch-mini-item">
+            <h4>+350%</h4>
+            <p>More Online Pass Leads</p>
+          </div>
+          <div class="pitch-mini-item">
+            <h4>-60%</h4>
+            <p>Fewer Repetitive Phone Calls</p>
+          </div>
+          <div class="pitch-mini-item">
+            <h4>100%</h4>
+            <p>Mobile Responsive & Fast</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; background: #000; padding: 2rem; border-radius: 8px; border: 1px solid #3f3f46;">
+        <h4 style="font-size: 1.4rem; margin-bottom: 1rem;">DEVELOPER PITCH SUMMARY</h4>
+        <p style="font-size: 0.85rem; color: #a1a1aa; margin-bottom: 1.5rem;">
+          How freelancers sell this website to local gym owners for <strong>$1,200 Upfront + $150/mo Maintenance</strong>.
+        </p>
+        <div style="font-size: 2.2rem; font-family: var(--font-display); font-weight: 700; color: #ffffff;">$1,200 USD</div>
+        <div style="font-size: 0.75rem; color: #71717a; text-transform: uppercase;">Standard Agency Project Quote</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       12. CONTACT & LOCATION SECTION
+       ========================================================================== -->
+  <section id="contact">
+    <div class="contact-grid">
+      <div>
+        <div class="section-tag">Get In Touch</div>
+        <h2 class="section-title">VISIT THE CLUB TODAY</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+          Drop in for a workout or schedule a free consultation with our head coach. Walk-ins are always welcome during open hours.
+        </p>
+
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <strong style="color: #fff;">LOCATION</strong>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">42-2-18 Raithu Nagar, Kotha Peta, Annapurnamma Peta, Rajamahendravaram, Andhra Pradesh 533101</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <strong style="color: #fff;">PHONE & WHATSAPP</strong>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">+1 (555) 839-4766 (Instant Response)</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <strong style="color: #fff;">EMAIL ENQUIRIES</strong>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">join@pulseandironfit.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-wrapper" style="width: 100%; height: 240px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-dim); margin-top: 2rem; position: relative;">
+          <!-- To change your present address later, update the 'q=' parameter. Use a real, valid address or coordinates (like below) to ensure a single red pin drops! -->
+          <iframe 
+            src="https://maps.google.com/maps?q=17.001819,81.775894+(PULSE%20%26%20IRON%20ATHLETIC%20CLUB)&t=&z=15&ie=UTF8&iwloc=B&output=embed" 
+            width="100%" 
+            height="100%" 
+            style="border:0; filter: invert(90%) hue-rotate(180deg) contrast(100%);" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <div style="background: var(--bg-card); border: 1px solid var(--border-bright); border-radius: 12px; padding: 2.5rem;">
+        <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">SEND A DIRECT INQUIRY</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+          Fill in your details and click <strong style="color:#25D366;">Send on WhatsApp</strong> — your message will open directly in WhatsApp, no email wait times.
+        </p>
+
+        <form id="freePassForm" style="display: flex; flex-direction: column; gap: 1.2rem;">
+          <div class="form-group">
+            <label for="memberName">Full Name</label>
+            <input type="text" id="memberName" class="form-control" placeholder="e.g. John Doe" required>
+          </div>
+
+          <div class="form-group">
+            <label for="memberEmail">Email Address</label>
+            <input type="email" id="memberEmail" class="form-control" placeholder="john@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="memberPhone">Phone Number</label>
+            <input type="tel" id="memberPhone" class="form-control" placeholder="+91 9876543210" required>
+          </div>
+
+          <div class="form-group">
+            <label for="memberGoal">Primary Fitness Goal</label>
+            <select id="memberGoal" class="form-control">
+              <option>Build Muscle &amp; Power</option>
+              <option>Fat Loss &amp; Athletic Conditioning</option>
+              <option>Personal Coaching 1-on-1</option>
+              <option>Recovery &amp; General Fitness</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="memberMessage">Message (Optional)</label>
+            <textarea id="memberMessage" class="form-control" rows="3" placeholder="Tell us your current fitness level or any questions..." style="resize: vertical;"></textarea>
+          </div>
+
+          <button type="submit" class="btn" id="whatsappSubmitBtn" style="width: 100%; margin-top: 0.5rem; background: #25D366; color: #ffffff; font-size: 1.05rem; border: none; gap: 12px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            SEND ON WHATSAPP
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       13. FOOTER
+       ========================================================================== -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="#" class="nav-brand">
+          <div class="brand-icon">PI</div>
+          <div class="brand-name">PULSE <span>& IRON</span></div>
+        </a>
+        <p>
+          High-performance strength, conditioning, and recovery engineered for dedicated lifters.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>EXPLORE</h4>
+        <ul class="footer-links">
+          <li><a href="#about">About Facility</a></li>
+          <li><a href="#programs">Core Programs</a></li>
+          <li><a href="#schedule">Class Timetable</a></li>
+          <li><a href="#calculator">Fitness Calculator</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>MEMBERSHIP</h4>
+        <ul class="footer-links">
+          <li><a href="#pricing">Monthly Plans</a></li>
+          <li><a href="#pricing">Annual Contracts</a></li>
+          <li><a href="#trainers">Personal Coaches</a></li>
+          <li><a href="#contact">Guest Pass</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>HOURS</h4>
+        <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.8;">
+          Mon - Fri: 5:00 AM - 10:00 PM <br>
+          Sat - Sun: 7:00 AM - 8:00 PM <br>
+          Keycard 24/7 for Pro Members
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Pulse & Iron Athletic Club. Built for Real Business Growth.</div>
+      <div>Designed & Developed with Black & White High Contrast Aesthetic</div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       14. PITCH DECK MODAL (FOR PITCHING TO THE GYM OWNER)
+       ========================================================================== -->
+  <div class="modal-overlay" id="pitchModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closePitchModal">✕</button>
+
+      <div class="section-tag" style="margin-bottom: 0.5rem;">CLIENT PITCH PROPOSAL</div>
+      <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">WEBSITE PITCH DECK FOR GYM OWNER</h2>
+
+      <div class="pitch-tabs">
+        <button class="pitch-tab-btn active" data-tab="tab1">1. Business Problem</button>
+        <button class="pitch-tab-btn" data-tab="tab2">2. Growth Funnel</button>
+        <button class="pitch-tab-btn" data-tab="tab3">3. Owner Pitch Script</button>
+        <button class="pitch-tab-btn" data-tab="tab4">4. Developer Pricing</button>
+      </div>
+
+      <!-- Tab 1: Business Problem -->
+      <div class="pitch-tab-pane active" id="tab1">
+        <div class="pitch-card-box">
+          <h4>🔴 The Problem Most Local Gyms Face</h4>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">
+            1. Potential members search Google for "gyms near me", but find outdated social media pages or no website.<br>
+            2. Customer front desk wastes 2+ hours daily answering repetitive calls about "What are your hours?", "How much is membership?", and "What classes do you offer?".<br>
+            3. No easy way for interested visitors to claim a free day pass instantly online.
+          </p>
+        </div>
+
+        <div class="pitch-card-box" style="border-color: #ffffff;">
+          <h4>🟢 How This Website Solves It Immediately</h4>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">
+            • <strong>Instant Credibility & Trust:</strong> High-contrast black & white aesthetic signals luxury, strength, and professionalism.<br>
+            • <strong>Automated Lead Capture:</strong> The "Free 1-Day Pass" modal captures name, email, and phone number 24/7.<br>
+            • <strong>Interactive Schedule & Calculator:</strong> Enables users to self-serve class times and calculate their fitness metrics.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tab 2: Growth Funnel -->
+      <div class="pitch-tab-pane" id="tab2">
+        <div class="pitch-card-box">
+          <h4>📈 Lead Conversion Funnel Architecture</h4>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">
+            Step 1: Local Prospect visits site via Google / Instagram link.<br>
+            Step 2: Dumbbell preloader creates immediate memorable wow factor.<br>
+            Step 3: Sees Live Opening Status + Transparent Membership Plans.<br>
+            Step 4: Clicks "Claim Free 1-Day Pass" & submits contact details.<br>
+            Step 5: Gym receives lead in CRM / Email -> Invites for free workout -> Converts to $89/mo Pro Member!
+          </p>
+        </div>
+      </div>
+
+      <!-- Tab 3: Owner Pitch Script -->
+      <div class="pitch-tab-pane" id="tab3">
+        <div class="pitch-card-box">
+          <h4>🗣️ Word-for-Word Pitch Script to Gym Owner</h4>
+          <blockquote style="border-left: 3px solid #ffffff; padding-left: 1rem; color: #e4e4e7; font-style: italic;">
+            "Hey [Gym Owner Name], I noticed your gym has an incredible atmosphere and heavy-duty equipment, but your online presence isn't capturing how premium your facility actually is.<br><br>
+            I built a custom live website prototype for Pulse & Iron with a dark high-contrast aesthetic, automated class schedule, interactive calorie calculator, and an instant Free Day Pass lead collector.<br><br>
+            If this brings you just 3 new long-term members this month, the website completely pays for itself. Can I show you a 2-minute live demo?"
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- Tab 4: Developer Pricing -->
+      <div class="pitch-tab-pane" id="tab4">
+        <div class="pitch-card-box">
+          <h4>💰 Real-World Freelance / Agency Pricing Model</h4>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
+            This is how developers turn website projects into predictable monthly income:
+          </p>
+
+          <table class="pricing-table-pitch">
+            <thead>
+              <tr>
+                <th>Service Deliverable</th>
+                <th>Standard Rate</th>
+                <th>Value Provided</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Custom Web Design & Development</td>
+                <td>$1,200 - $2,500 (One-time)</td>
+                <td>Turnkey mobile-responsive website + lead capture</td>
+              </tr>
+              <tr>
+                <td>Monthly Maintenance & Hosting Retainer</td>
+                <td>$150 - $300 / month</td>
+                <td>Domain, hosting, schedule edits, security updates</td>
+              </tr>
+              <tr>
+                <td>Total First Year Revenue for Developer</td>
+                <td><strong>$3,000 - $4,300 per Gym</strong></td>
+                <td>Recurring passive income for solo dev</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       15. FREE DAY PASS MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="passModal">
+    <div class="modal-content" style="max-width: 500px; text-align: center;">
+      <button class="modal-close" id="closePassModal">✕</button>
+
+      <div class="section-tag">1-DAY VIP PASS</div>
+      <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem;">CLAIM YOUR FREE DAY PASS</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+        Experience Pulse & Iron facility, turf zone, and recovery sauna for 24 hours. No obligation.
+      </p>
+
+      <form id="modalPassForm" style="display: flex; flex-direction: column; gap: 1rem;">
+        <input type="text" id="modalPassName" class="form-control" placeholder="Your Full Name" required>
+        <input type="email" id="modalPassEmail" class="form-control" placeholder="Your Email Address" required>
+        <input type="tel" id="modalPassPhone" class="form-control" placeholder="Mobile Phone Number (+9573329547)" required>
+        <button type="submit" class="btn" style="width: 100%; background: #25D366; color: #fff; border: none; gap: 10px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          SEND ON WHATSAPP
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Button -->
+  <a id="floatingWA" href="https://wa.me/9573329547?text=Hi%20Pulse%20%26%20Iron!%20I%20found%20your%20website%20and%20I%27m%20interested%20in%20membership.%20Can%20you%20please%20share%20more%20details%3F"
+     target="_blank"
+     title="Chat on WhatsApp"
+     style="
+       position: fixed;
+       bottom: 28px;
+       right: 28px;
+       z-index: 3000;
+       width: 60px;
+       height: 60px;
+       background: #25D366;
+       border-radius: 50%;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       box-shadow: 0 4px 20px rgba(37,211,102,0.55);
+       transition: transform 0.2s ease, box-shadow 0.2s ease;
+       text-decoration: none;
+       animation: waWiggle 4s ease-in-out infinite;
+     "
+     onmouseenter="this.style.transform='scale(1.15)';this.style.boxShadow='0 6px 28px rgba(37,211,102,0.75)'"
+     onmouseleave="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(37,211,102,0.55)'"
+  >
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script src="app.js"></script>
+</body>
+</html>
